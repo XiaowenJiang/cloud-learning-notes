@@ -72,3 +72,41 @@ On-demand: renting a cab vs (previously) renting a car or buying one
    * Hadoop/Mapreduce, NoSQL, all need clusters
 
 ### What is a distributed system?
+
+#### What is an Operating System?
+
+* User interface to hardware (device drivers)
+* Provide abstractions (processes, file system)
+* Resource manager (scheduler)
+* Means of communication (networking)
+
+#### What is a distributed system?
+
+* A distributed system is a collection of independent computers that appear to the users of the system as a single computer.
+* Three primary characteristics:
+  * multiple computers
+  * interconnections
+  * shared state
+
+> distributed system = many processes sending and receiving messages
+
+![interconnected processes](../images/interconnected_processes.png)
+
+
+### MapReduce Paradigm
+
+    (map square(1 2 3 4))
+     Output   (1 4 9 16)
+     //processes each record sequentially and independently
+
+     (reduce + (1 4 9 16))
+        (+ 16(+9(+4 1)))
+        Output 30
+
+Map: process individual records to generate intermediate key/value pairs.
+
+![map process](../images/map_process.png)
+
+Reduce: processes and merges all intermediate values associated per key
+
+![reduce process](../images/reduce_process.png)
